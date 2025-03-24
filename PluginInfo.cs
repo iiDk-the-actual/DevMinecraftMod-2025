@@ -4,6 +4,6 @@
     {
         public const string GUID = "org.dev9998.gorillatag.devminecraftmod";
         public const string Name = "DevMinecraftMod";
-        public const string Version = "1.2.0";
+        public const string Version = "1.2.1";
     }
 }

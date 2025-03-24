@@ -65,7 +65,7 @@ namespace DevMinecraftMod
         internal bool updated;
         internal void Update()
         {
-            if (!updated && GorillaLocomotion.Player.Instance != null)
+            if (!updated && GorillaLocomotion.GTPlayer.Instance != null)
             {
                 OnGameInitialized();
                 updated = true;

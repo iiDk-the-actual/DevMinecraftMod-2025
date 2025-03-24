@@ -14,14 +14,14 @@ namespace DevMinecraftMod.Scripts.Building
         {
             if (col.gameObject.name == "GorillaPlayer")
             {
-                Rigidbody body = Player.Instance.GetComponent<Rigidbody>();
+                Rigidbody body = GTPlayer.Instance.GetComponent<Rigidbody>();
                 if (body.velocity.y <= -2.5f)
                 {
                     float oldY = Mathf.Clamp(body.velocity.y, -25, 0);
                     float rand = Random.Range(1, 3);
                     float force = Mathf.Clamp(oldY * -1 * 0.98f, 2, 15);
 
-                    Player.Instance.transform.position += new Vector3(0, 0.15f, 0);
+                    GTPlayer.Instance.transform.position += new Vector3(0, 0.15f, 0);
 
                     if (body.velocity.x > 3.85f || body.velocity.x < -3.85f || body.velocity.z > 3.85f || body.velocity.z < -3.85f || body.velocity.y <= -7.5f)
                     {

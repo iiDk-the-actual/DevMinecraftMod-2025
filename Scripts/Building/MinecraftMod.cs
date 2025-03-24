@@ -922,22 +922,22 @@ namespace DevMinecraftMod.Scripts.Building
 
         public void PlaceBlock()
         {
-            float headDistance = Vector3.Distance(block.transform.position, Player.Instance.headCollider.transform.position);
+            float headDistance = Vector3.Distance(block.transform.position, GTPlayer.Instance.headCollider.transform.position);
 
             if (headDistance < 0.75f)
                 return;
 
-            float rightHandDistance = Vector3.Distance(block.transform.position, Player.Instance.rightControllerTransform.position);
+            float rightHandDistance = Vector3.Distance(block.transform.position, GTPlayer.Instance.rightControllerTransform.position);
 
             if (rightHandDistance < 0.685f)
                 return;
 
-            float leftHandDistance = Vector3.Distance(block.transform.position, Player.Instance.leftControllerTransform.position);
+            float leftHandDistance = Vector3.Distance(block.transform.position, GTPlayer.Instance.leftControllerTransform.position);
 
             if (leftHandDistance < 0.685f)
                 return;
 
-            float bodyDistance = Vector3.Distance(block.transform.position, Player.Instance.bodyCollider.transform.position);
+            float bodyDistance = Vector3.Distance(block.transform.position, GTPlayer.Instance.bodyCollider.transform.position);
 
             if (bodyDistance < 0.5f)
                 return;
@@ -1949,7 +1949,7 @@ namespace DevMinecraftMod.Scripts.Building
             else
                 ln.material.color = new Color(1, 0, 0, 0.2f);
 
-            ln.SetPosition(0, Player.Instance.rightControllerTransform.position);
+            ln.SetPosition(0, GTPlayer.Instance.rightControllerTransform.position);
 
             if (minecraftBlocks.Count != 0)
             {
@@ -1957,9 +1957,9 @@ namespace DevMinecraftMod.Scripts.Building
                     blk.SetActive(true);
             }
 
-            Player __instance = Player.Instance;
+            GTPlayer __instance = GTPlayer.Instance;
 
-            if (Physics.Raycast(__instance.rightControllerTransform.position, -__instance.rightControllerTransform.up, out RaycastHit hit, 25, Player.Instance.locomotionEnabledLayers))
+            if (Physics.Raycast(__instance.rightControllerTransform.position, -__instance.rightControllerTransform.up, out RaycastHit hit, 25, GTPlayer.Instance.locomotionEnabledLayers))
             {
                 Vector3 newPos = hit.point;
 
@@ -1986,9 +1986,9 @@ namespace DevMinecraftMod.Scripts.Building
                 block.transform.position = new Vector3(Mathf.RoundToInt(newPos.x) != 0 ? Mathf.RoundToInt(newPos.x / 1f) * 1 : 2, Mathf.RoundToInt(newPos.y) != 0 ? Mathf.RoundToInt(newPos.y / 1f) * 1 : 0, Mathf.RoundToInt(newPos.z) != 0 ? Mathf.RoundToInt(newPos.z / 1f) * 1 : 2);
 
                 if (currentBlock == 40 || currentBlock == 41 || currentBlock == 49 || currentBlock == 50)
-                    block.transform.eulerAngles = new Vector3(0, Mathf.RoundToInt(Player.Instance.bodyCollider.transform.eulerAngles.y) != 0 ? Mathf.RoundToInt(Player.Instance.bodyCollider.transform.eulerAngles.y / 90f) * 90 : 0, 0f);
+                    block.transform.eulerAngles = new Vector3(0, Mathf.RoundToInt(GTPlayer.Instance.bodyCollider.transform.eulerAngles.y) != 0 ? Mathf.RoundToInt(GTPlayer.Instance.bodyCollider.transform.eulerAngles.y / 90f) * 90 : 0, 0f);
                 else if (currentBlock == 2 || currentBlock == 3 || currentBlock == 4 || currentBlock == 5 || currentBlock == 6 || currentBlock == 7)
-                    block.transform.eulerAngles = new Vector3(Mathf.RoundToInt(Player.Instance.rightControllerTransform.transform.eulerAngles.x) != 0 ? Mathf.RoundToInt(Player.Instance.rightControllerTransform.transform.eulerAngles.x / 90f) * 90 : 0, Mathf.RoundToInt(Player.Instance.bodyCollider.transform.eulerAngles.y) != 0 ? Mathf.RoundToInt(Player.Instance.bodyCollider.transform.eulerAngles.y / 90f) * 90 : 0, 0f);
+                    block.transform.eulerAngles = new Vector3(Mathf.RoundToInt(GTPlayer.Instance.rightControllerTransform.transform.eulerAngles.x) != 0 ? Mathf.RoundToInt(GTPlayer.Instance.rightControllerTransform.transform.eulerAngles.x / 90f) * 90 : 0, Mathf.RoundToInt(GTPlayer.Instance.bodyCollider.transform.eulerAngles.y) != 0 ? Mathf.RoundToInt(GTPlayer.Instance.bodyCollider.transform.eulerAngles.y / 90f) * 90 : 0, 0f);
                 else
                     block.transform.eulerAngles = Vector3.zero;
             }
@@ -1997,7 +1997,7 @@ namespace DevMinecraftMod.Scripts.Building
                 raycastExists = false;
 
                 ln.enabled = false;
-                ln.SetPosition(1, Player.Instance.rightControllerTransform.position);
+                ln.SetPosition(1, GTPlayer.Instance.rightControllerTransform.position);
                 block.SetActive(false);
                 blockAlt.SetActive(false);
             }

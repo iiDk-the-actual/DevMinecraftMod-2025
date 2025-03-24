@@ -23,7 +23,7 @@ namespace DevMinecraftMod.Scripts.Utils
                 return;
             }
 
-            if (GorillaLocomotion.Player.Instance.inOverlay)
+            if (GorillaLocomotion.GTPlayer.Instance.inOverlay)
                 return;
 
             touchTime = Time.time;
