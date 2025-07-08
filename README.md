@@ -1,3 +1,6 @@
+# THIS MOD IS OUTDATED!
+Use this mod instead, it is networked and updated for the latest version: https://github.com/developer9998/GorillaCraft
+
 # DevMinecraftMod-2025
 
 ## Overview
